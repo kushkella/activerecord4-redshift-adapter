@@ -22,13 +22,6 @@ module ActiveRecord
           end
         end
 
-        def type_for_column(column)
-          if column.array
-            @conn.lookup_cast_type("#{column.sql_type}[]")
-          else
-            super
-          end
-        end
       end
 
       module SchemaStatements
